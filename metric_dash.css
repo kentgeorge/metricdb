@@ -1,0 +1,130 @@
+@CHARSET "ISO-8859-1";
+
+#header
+{
+    height:50px;
+    background-color: #85C1E9;
+    font-size: 40px;
+    text-align: center;	
+    padding: 5px;
+    text-shadow: 0px 2px #9b9045;
+    color: #6364a1;
+    box-shadow:0px 3px 5px #006fff;
+}
+
+#sub_head
+{
+	height:20px;
+    background-color: #a9d3ef;
+    padding-right : 80px;
+    text-align: right;	
+    margin-top: 5px;
+    padding-bottom:5px;
+    box-shadow:0px 3px 5px #006fff;
+}
+
+#refresh{
+	float: left;
+	margin-left: 30px;
+}
+
+#container{
+	height:auto;
+	margin-top: 10px;
+}
+
+#metric_table_dt{
+	border:double;
+	border-collapse: collapse;
+	min-width:800px;
+	height:400px;
+	margin-top: 5px;	
+}
+
+td{
+	background-color:#d0d0d0;
+	padding-left:5px;
+	padding-right : 5px;
+	
+}
+
+table, th, td{
+	border : thin solid ;
+}
+
+
+tr>th 
+{  
+	background-color: rgb(113, 182, 215);
+	padding: 2px;
+	box-shadow:0px 3px 5px #808080;
+}
+
+td:first-child{
+
+	background-color: rgb(113, 182, 215);
+	border : none;
+	font-weight: bold;
+}
+
+
+.data{
+	
+	padding-left:5px;
+	padding-right : 5px;
+	min-width : 130px;
+}
+
+
+.indicator{
+	min-width:18px;
+	max-width:20px;
+	border-collapse: collapse;
+	border:none;
+	box-shadow:none;
+}
+
+
+#box{
+	border-bottom: thick groove;
+	box-shadow:0px 4px 5px #808080;
+}
+
+.box{
+	border-bottom: thick groove;
+}
+
+#date_div{
+	float:left;
+	margin-top: 10px;
+}
+
+.ui-datepicker-calendar {
+    display: none;
+    }
+    
+
+#ui-datepicker-div button.ui-datepicker-current {
+	display: none;
+	}
+	
+
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: fixed	;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

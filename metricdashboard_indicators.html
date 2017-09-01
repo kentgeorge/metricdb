@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>D A S H B O A R D</title>
+<link rel="stylesheet" type="text/css" href="metric_dash.css">
+<script type="text/javascript" src="./jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="./jquery-ui.min.js"></script>
+
+<!-- <script type="text/javascript" src="./bootstrap-datepicker.js"></script>
+     <link rel="stylesheet" type="text/css" href="datepicker.css">          -->
+
+</head>
+
+<body>
+<div id = "mains">
+<div id="header">
+BWF &nbsp; METRIC &nbsp;  DASHBOARD
+</div>
+
+<div id="sub_head">
+<button id="refresh">Refresh</button>
+Monthly Data  :   <input  name ="select_date" id="datepicker" type="text"/>
+</div>
+
+<div id="container">
+
+
+<table id="metric_table_dt" style="text-align: center;">
+<tr>
+<th>Activities</th>
+<th>Metric</th>
+<th>Target</th>
+<th class="data">Date </th>
+<th class="indicator"></th>
+<th class="indicator"></th>
+<th class="data">B.Net</th>
+<th class="data">Date</th>
+<th class="indicator"></th>
+<th class="indicator"></th>
+<th class="data">Wealth</th>
+<th class="data">Date </th>
+<th class="indicator"></th>
+<th class="indicator"></th>
+<th class="data">Flex</th>
+</tr>
+
+
+<tr id="TE">
+<td></td>
+<td># Total Events</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="EOLA"> 
+<td> Events </td>
+<td>% OLA (Acknowledgement)</td>
+<td> 95 </td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="SLA">
+<td></td>
+<td>% SLA (First Point Resolution)</td>
+<td> 60 </td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="EE" class="box">
+<td id="box"></td>
+<td>% Event escalated to L2 / L3</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="TI">
+<td></td>
+<td># Total Incidents </td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="IOLA">
+<td> Incidents </td>
+<td>% OLA (Acknowledgement)</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="IR">
+<td></td>
+<td>% Incidents Resolved</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="IE" class="box">
+<td id="box"></td>
+<td>% Incidents Escalated to L2 / L3</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="TST">
+<td></td>
+<td> # Total Scheduled Tasks </td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+<tr id="OTEST">
+<td>Scheduled Tasks</td>
+<td> %  On time execution of Scheduled Tasks  </td>
+<td> 95 </td>
+<td> &nbsp; &nbsp; </td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+<td> &nbsp; &nbsp;</td>
+</tr>
+
+</table>
+</div>
+</div>
+
+<script type="text/javascript">
+
+//////////////////////////////////////////////////////////////////////////////
+/// printing the latest values table/////
+
+$.ajax({
+url: 'log.csv',
+dataType: 'text',
+}).done(successFunction);	
+
+	
+function successFunction(data) {
+		 	 var date = new Date();
+	 		 firstday = new Date(date.getFullYear(), date.getMonth(), 1);
+	    	 lastday = new Date(date.getFullYear(), date.getMonth() + 1, 0, 23, 59, 59);
+	    	 l_firstday = new Date(date.getFullYear(), date.getMonth()-1, 1);
+        	 l_lastday = new Date(date.getFullYear(), date.getMonth(), 0, 23, 59, 59);
+        	 l2_firstday = new Date(date.getFullYear(), date.getMonth()- 2, 1); 
+        	 l2_lastday = new Date(date.getFullYear(), date.getMonth() - 1, 0, 23, 59, 59);
+	    	 $('#datepicker').datepicker('setDate', new Date(date.getFullYear(), date.getMonth()));
+	    	 $('#datepicker').val(date.getMonth("MM")+1 + " " +date.getFullYear());
+	    	 
+	    	 monthData(data);
+	    	 
+	    	// $('#ui-datepicker-div button.ui-datepicker-current').click();
+	    	// $('#datepicker').datepicker('close',true);
+	     	 
+}
+  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//$(document).ready(function(){
+	$("#datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true,
+       	showButtonPanel : true,
+        dateFormat: 'MM yy',
+        timeFormat:'HH mm ss',
+        onClose: function(dateText, inst) { 
+        	
+        	$(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth + 1, 0, 23, 59, 59));
+        	 lastday = new Date(inst.selectedYear, inst.selectedMonth + 1, 0, 23, 59, 59);
+       	     firstday = new Date(inst.selectedYear, inst.selectedMonth, 1);
+        	 l_firstday = new Date(inst.selectedYear, inst.selectedMonth - 1, 1);
+        	 l_lastday = new Date(inst.selectedYear, inst.selectedMonth, 0, 23, 59, 59);
+             l2_firstday = new Date(inst.selectedYear, inst.selectedMonth - 2, 1); 
+        	 l2_lastday = new Date(inst.selectedYear, inst.selectedMonth -1 , 0, 23, 59, 59);
+        	
+        	 $.ajax({
+        		  url: 'log.csv',
+        		  dataType: 'text',
+        		  }).done(monthData);	  
+        	//alert(getDate .datepicker("getDate"));
+        }
+    });
+//});
+ 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////// printing the table with selected month's data
+  
+  function monthData(data){
+	 var allRows = data.split(/\r?\n|\r/);
+	 
+	 c_range = findRange(allRows, firstday, lastday);
+ 	 start = c_range[0];
+ 	 end = c_range[1];
+ 	
+ 	 $('#metric_table_dt td+td+td+td').empty();
+	 $('#metric_table_dt td+td').css("background-color", "#d0d0d0");
+ 	 
+ 	 if(start < allRows.length && start != end){ 
+ 		 
+ 		 
+ 		l_range = findRange(allRows, l_firstday, l_lastday); 	 
+	 	l_start = l_range[0];
+	 	l_end = l_range[1];
+	 	
+	 	l2_range = findRange(allRows, l2_firstday, l2_lastday); 	 
+	 	l2_start = l2_range[0];
+	 	l2_end = l2_range[1];
+	 	
+	
+	 if(l_start < allRows.length && l_start != l_end){
+		  addIndicators(allRows, l_start , l_end, "l");
+		  }
+	
+	 if(l2_start < allRows.length && l2_start != l2_end){
+		  addIndicators(allRows, l2_start , l2_end, "l2");
+	 	  }
+	 
+	 fillTable(allRows, start , end);
+	 	
+	  
+	  }
+	 else if(start < allRows.length && start == end){
+		 alert("No data for selected month");
+		 }
+	  else{
+		  alert("Please select a past date.");
+	  }
+  
+ 	
+ }
+  
+ 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$('#refresh').click(function(){
+	window.location.reload();
+	
+});
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+ function formattedDate(dt){
+	day =  dt.getDate();
+	month = dt.getMonth() + 1;
+	hours = dt.getHours();
+	minutes = dt.getMinutes();
+	seconds = dt.getSeconds();
+   	date =  dt.getFullYear()  + '/' + (month<10 ? '0' : '') + month + '/'  + (day<10 ? '0' : '') + day ;
+   	time = (hours<10 ? '0' : '') + hours + ":" + (minutes<10 ? '0' : '') + minutes + ":" + (seconds<10 ? '0' : '') + seconds;
+	result = date + " " + time;
+	return result;
+ }
+
+
+function format_date(dt){
+	dt_time = dt.split(' ');	
+	date = dt_time[0];
+	time = dt_time[1];
+	date_split = date.split('/');
+	day = date_split[2];
+	month = date_split[1];
+	year = date_split[0];
+	new_date = day + '/' + month + '/' + year + ' ' + time;
+	return new_date;
+}
+
+
+function findRange(rows, date1, date2)
+{
+	  f_firstday  = formattedDate(date1);
+	  f_lastday   = formattedDate(date2);
+	  var i;
+	  for (i=0; i < rows.length; i++) {
+		var rowCells = rows[i].split(',');
+		if (f_firstday <= rowCells[0]) 
+			break;
+		else if(f_firstday > rowCells[0])
+			continue;
+			
+	  }
+	  
+	  for (var j = i; j < rows.length; j++ ){
+		 var rowCells = rows[j].split(',');
+		
+		 if(f_lastday > rowCells[0])
+				continue;
+		 else if ( f_lastday <= rowCells[0] ) 
+				break;
+}
+	
+	  var x = new Array();
+	  x[0] = i;
+	  x[1] = j;
+	  return x;
+}
+
+ 
+function fillTable(allRows , start , end){
+	 	for (start; start < end; start++) {
+		   
+		    var rowCells = allRows[start].split(',');
+	    	if(rowCells[1].match("^W")){
+		  	 columnId =10;
+			 //columnId =8;
+			 
+			 }
+		  	else if(rowCells[1].match("^B")){
+		  		columnId = 6;
+				//columnId = 5;
+			}
+			
+		  	else if(rowCells[1].match("^F")){
+		  		columnId = 14;
+				//columnId = 11;
+		  	}
+		   
+			rowId = rowCells[1].substr(1); 	
+	    	dateColumn = columnId - 3;
+	    	//dateColumn = columnId - 2;
+			
+	    	str = '#'+rowId+ ' td:eq('+columnId+')';
+			c_columnId = columnId - 1;
+			str2 = '#'+rowId+ ' td:eq('+c_columnId+')';
+			
+	    	
+	    	
+		 	$('#'+rowId+ ' td:eq('+dateColumn+')').text(format_date(rowCells[0]));
+			$(str).text(rowCells[2]);
+			
+			if($(str2 + " span").text())
+			{		
+				if($(str).text() > $(str2 + " span").text())
+				{
+					$(str2).append("<img src = \'.\/images\/red_arrow.png\' />");
+				}
+				else{
+					$(str2).append("<img src = \'.\/images\/green_arrow.png\' />");
+					
+				}
+		 	}
+			
+			
+			////////RGB code
+			
+			value =  $('#'+rowId+ ' td:eq('+columnId+')');
+			target = $('#'+rowId+ ' td:eq(2)');
+			
+			f_target = parseFloat(target.text());
+			f_value = parseFloat(value.text());
+			
+			if ($.isNumeric(f_target) && f_target <= f_value)
+			{
+				value.css("background-color","rgb(18, 189, 18)");
+			}
+			else if($.isNumeric(f_target) && f_target-5 > f_value)
+			{
+				value.css("background-color","Red");
+			}
+			else if($.isNumeric(f_target)){
+				value.css("background-color","rgb(240, 177, 68)");
+			}
+		 }
+ }
+
+function addIndicators(allRows, start, end, flag){
+	
+	 	for (start; start < end; start++) {
+		   
+		    var rowCells = allRows[start].split(',');
+	    	if(rowCells[1].match("^W")){
+	    		if(flag == "l")		
+		  	 		columnId =9;
+					//columnId =7;
+				else if(flag == "l2")
+	    			columnId =8;
+		  	}
+		  	else if(rowCells[1].match("^B")){
+		  		if(flag == "l")		
+		  	 		columnId =5;
+					//columnId =4;
+	    		else if(flag == "l2")
+	    			columnId =4;
+		  	}
+		  	else if(rowCells[1].match("^F")){
+		  		if(flag == "l")
+					//columnId =10;	
+		  	 		columnId =13;		
+	    		else if(flag = "l2")
+	    			columnId == 12;
+		  	}
+		   
+			rowId = rowCells[1].substr(1); 	
+			
+			str = '#'+rowId+ ' td:eq('+columnId+')';
+			c_columnId = columnId + 1;
+			str2 = '#'+rowId+ ' td:eq('+c_columnId+')';
+			$(str).attr('class','tooltip');
+			$(str).empty();
+			$(str).append("\<span class=\"tooltiptext\">"+rowCells[2]+"\<\/span\>");
+			
+			
+			
+		
+		if($(str2 + " span").text())
+		{		
+			if($(str + " span").text() < $(str2 + " span").text())
+			{
+			//alert("dndn");
+			$(str).append("<img src = \'.\/images\/red_arrow.png\' />");
+			}
+			else{
+				$(str).append("<img src = \'.\/images\/green_arrow.png\' />");
+			}
+	 	}
+	
+	
+	 }
+	
+}
+</script>
+
+
+</body>
+</html>
